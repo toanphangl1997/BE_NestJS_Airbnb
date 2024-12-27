@@ -16,7 +16,7 @@ export class LocationService {
   async getLocation() {
     try {
       const locations = await this.prisma.viTri.findMany();
-      console.log(locations);
+
       return responseSuccess(
         locations,
         'Lấy thông tin tất cả vị trí thành công',
@@ -49,7 +49,7 @@ export class LocationService {
           hinh_anh: body.hinh_anh,
         },
       });
-      console.log(newLocation);
+
       return responseSuccess(newLocation, 'Thêm vị trí thành công', 200);
     } catch (error) {
       console.log(error.message);

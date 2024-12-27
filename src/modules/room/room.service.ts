@@ -16,7 +16,6 @@ export class RoomService {
   async getRoom() {
     try {
       const getRooms = await this.prisma.phong.findMany();
-      // console.log(getRooms);
       return responseSuccess(getRooms, 'Lấy thông tin phòng thành công', 200);
     } catch (error) {
       console.error(error);
@@ -46,7 +45,7 @@ export class RoomService {
           id_vi_tri: body.id_vi_tri,
         },
       });
-      console.log(postRoom);
+
       return responseSuccess(postRoom, `Tạo thông tin phòng thành công`, 200);
     } catch (error) {
       console.log(error);
@@ -61,7 +60,6 @@ export class RoomService {
           id_vi_tri,
         },
       });
-      console.log('Kết quả', room);
 
       if (room.length === 0) {
         throw new NotFoundException(
@@ -116,8 +114,6 @@ export class RoomService {
         where: { id },
       });
 
-      console.log('Kết quả', room);
-
       if (!room) {
         throw new NotFoundException(`Room với id = ${id} không tồn tại`);
       }
@@ -127,7 +123,7 @@ export class RoomService {
         200,
       );
     } catch (error) {
-      console.log(error);
+      console.error(error);
       throw new BadRequestException(`Không thể tìm phòng với id = ${id}`);
     }
   }
@@ -161,7 +157,7 @@ export class RoomService {
         `Chỉnh sửa thông tin phòng với ID:${id} thành công`,
       );
     } catch (error) {
-      console.log(error);
+      console.error(error);
       throw new BadRequestException(`Không thể chỉnh sửa phòng với id = ${id}`);
     }
   }
@@ -174,7 +170,6 @@ export class RoomService {
     }
 
     try {
-      console.log(number);
       const deleteRooom = await this.prisma.phong.delete({
         where: { id: number },
       });
@@ -184,7 +179,7 @@ export class RoomService {
         200,
       );
     } catch (error) {
-      console.log(error);
+      console.error(error);
       throw new BadRequestException(
         `Không tìm thấy room với Id = ${number} Chi tiết lỗi: ${error.message}`,
       );

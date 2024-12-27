@@ -15,7 +15,7 @@ export class CommentService {
       return responseSuccess(getComment, 'Lấy bình luận thành công');
     } catch (error) {
       console.error(error);
-      throw new Error('Lỗi khi lấy dữ liệu');
+      throw new BadRequestException('Lỗi khi lấy dữ liệu');
     }
   }
 
@@ -39,7 +39,7 @@ export class CommentService {
           sao_binh_luan: body.sao_binh_luan,
         },
       });
-      console.log(postComment);
+
       return responseSuccess(postComment, 'Thêm bình luận thành công');
     } catch (error) {
       throw new BadRequestException('Không thể tạo bình luận');
@@ -69,7 +69,7 @@ export class CommentService {
           ngay_binh_luan: new Date().toISOString(),
         },
       });
-      console.log(putComment);
+
       return responseSuccess(putComment, 'Chỉnh sửa bình luận thành công', 200);
     } catch (error) {
       console.error(error);
@@ -115,7 +115,7 @@ export class CommentService {
       );
     } catch (error) {
       console.error(error);
-      throw new Error('lỗi tải bình luận');
+      throw new BadRequestException('lỗi tải bình luận');
     }
   }
 }

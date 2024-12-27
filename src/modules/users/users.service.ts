@@ -18,7 +18,6 @@ export class UsersService {
   async getUser() {
     try {
       const getUser = await this.prisma.nguoiDung.findMany();
-      // console.log(getUser);
       return responseSuccess(getUser, 'Lấy thông tin User thành công');
     } catch (error) {
       console.error(error);
@@ -40,14 +39,14 @@ export class UsersService {
           role: body.role,
         },
       });
-      console.log(body);
+
       return responseSuccess(
         postUser,
         'Tạo thông tin người dùng thành công',
         200,
       );
     } catch (error) {
-      console.log(error);
+      console.error(error);
       throw new BadRequestException('Không thể tạo thông tin user');
     }
   }
@@ -150,8 +149,7 @@ export class UsersService {
 
   async putUserID(id: string, body: Partial<UpdateUserDto>) {
     try {
-      console.log(id, body);
-
+      // console.log(id,body)
       const userExist = await this.prisma.nguoiDung.findUnique({
         where: { id: parseInt(id) },
       });
