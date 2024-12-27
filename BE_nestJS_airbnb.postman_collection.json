@@ -1,0 +1,887 @@
+{
+	"info": {
+		"_postman_id": "6d5c8bd8-b40e-42fe-bc73-ae42e8d4dab4",
+		"name": "BE_nestJS_airbnb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38642360"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Biku00\",\r\n    \"email\" : \"biku00@gmail.com\",\r\n    \"pass_word\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}auth/signup",
+							"host": [
+								"{{endpoint}}auth"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"biku00@gmail.com\",\r\n    \"pass_word\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}auth/signin",
+							"host": [
+								"{{endpoint}}auth"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Get Comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}comment/get-comment",
+							"host": [
+								"{{endpoint}}comment"
+							],
+							"path": [
+								"get-comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 10,\r\n    \"ma_cong_viec\" : 10,\r\n    \"ma_nguoi_binh_luan\" : 10,\r\n    \"noi_dung\" : \"vip-vip-vip\",\r\n    \"sao_binh_luan\" : 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}comment/post-comment",
+							"host": [
+								"{{endpoint}}comment"
+							],
+							"path": [
+								"post-comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ma_cong_viec\": 1,\r\n  \"noi_dung\": \"Rất là Oke\",\r\n  \"sao_binh_luan\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}comment/put-comment/12",
+							"host": [
+								"{{endpoint}}comment"
+							],
+							"path": [
+								"put-comment",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}comment/delete-comment/12",
+							"host": [
+								"{{endpoint}}comment"
+							],
+							"path": [
+								"delete-comment",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment With RoomID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}comment/for-room/5",
+							"host": [
+								"{{endpoint}}comment"
+							],
+							"path": [
+								"for-room",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking Room",
+			"item": [
+				{
+					"name": "Get Booking Room",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}booking/booking-room",
+							"host": [
+								"{{endpoint}}booking"
+							],
+							"path": [
+								"booking-room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Booking Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_phong\" : 10,\r\n    \"so_luong_khach\" : 10,\r\n    \"ma_nguoi_dat\" : 11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}booking/create-bk-room",
+							"host": [
+								"{{endpoint}}booking"
+							],
+							"path": [
+								"create-bk-room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking Room With ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}booking/bk-room-withid/7",
+							"host": [
+								"{{endpoint}}booking"
+							],
+							"path": [
+								"bk-room-withid",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Booking Room With ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ma_phong\" : 8,\r\n    \"so_luong_khach\" : 13,\r\n    \"ma_nguoi_dat\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}booking/put-bk-room-withid/8",
+							"host": [
+								"{{endpoint}}booking"
+							],
+							"path": [
+								"put-bk-room-withid",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Booking Room With ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}booking/delete-bk-room-withid/11",
+							"host": [
+								"{{endpoint}}booking"
+							],
+							"path": [
+								"delete-bk-room-withid",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking Room For User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}booking/for-bk-room/2",
+							"host": [
+								"{{endpoint}}booking"
+							],
+							"path": [
+								"for-bk-room",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}users/get-user",
+							"host": [
+								"{{endpoint}}users"
+							],
+							"path": [
+								"get-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 26,\r\n    \"name\" : \"Linh Phan\",\r\n    \"email\" : \"linhgia0011@gmail.com\",\r\n   \"pass_word\" : \"123456\",\r\n   \"phone\" : \"0905034959\",\r\n   \"birth_day\" : \"2008-09-10\",\r\n   \"gender\" : \"Female\",\r\n   \"role\" : \"admin\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}users/post-user",
+							"host": [
+								"{{endpoint}}users"
+							],
+							"path": [
+								"post-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}users/delete-user/12",
+							"host": [
+								"{{endpoint}}users"
+							],
+							"path": [
+								"delete-user",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Panigation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}users/panigation-user/?page=1&pageSize=4",
+							"host": [
+								"{{endpoint}}users"
+							],
+							"path": [
+								"panigation-user",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User With ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}users/user-withid/1",
+							"host": [
+								"{{endpoint}}users"
+							],
+							"path": [
+								"user-withid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put User With ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Hoàng Khánh Linhhh\",\r\n    \"email\": \"linhhoang@gmail.com\",\r\n    \"pass_word\": \"1234567\",\r\n    \"phone\": \"01234569876\",\r\n    \"birth_day\": \"2009-01-12\",\r\n    \"gender\": \"Female\",\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}users/put-user-withid/14",
+							"host": [
+								"{{endpoint}}users"
+							],
+							"path": [
+								"put-user-withid",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search User With Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}users/search-user/biku",
+							"host": [
+								"{{endpoint}}users"
+							],
+							"path": [
+								"search-user",
+								"biku"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Upload Avatar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [
+										"/C:/Users/Lenovo/OneDrive/Pictures/ImageAirbnb/Image User/User5.png",
+										"/C:/Users/Lenovo/OneDrive/Pictures/ImageAirbnb/Image User/User4.png"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}users/upload-avatar-user/4",
+							"host": [
+								"{{endpoint}}users"
+							],
+							"path": [
+								"upload-avatar-user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "Get Rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}room/get-room",
+							"host": [
+								"{{endpoint}}room"
+							],
+							"path": [
+								"get-room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"id\" : 18,\r\n    \"ten_phong\" : \"Alacare\",\r\n    \"khach\" : 5,\r\n    \"phong_ngu\" : 2,\r\n    \"giuong\" : 4,\r\n    \"phong_tam\" : 1,\r\n    \"gia_tien\" : 200000,\r\n    \"id_vi_tri\" : 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}room/post-room",
+							"host": [
+								"{{endpoint}}room"
+							],
+							"path": [
+								"post-room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room With Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}room/location-room/1",
+							"host": [
+								"{{endpoint}}room"
+							],
+							"path": [
+								"location-room",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Panigation Rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}room/panigation-room/?page=1&pageSize=4",
+							"host": [
+								"{{endpoint}}room"
+							],
+							"path": [
+								"panigation-room",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room With ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}room/room-withid/5",
+							"host": [
+								"{{endpoint}}room"
+							],
+							"path": [
+								"room-withid",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Room With ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_phong\" : \"LandMark81\",\r\n    \"khach\" : 10,\r\n    \"phong_ngu\" : 4,\r\n    \"giuong\" : 8,\r\n    \"phong_tam\" : 4,\r\n    \"gia_tien\" : 10000000,\r\n    \"id_vi_tri\" : 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}room/put-room-withid/11",
+							"host": [
+								"{{endpoint}}room"
+							],
+							"path": [
+								"put-room-withid",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Room With ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}room/delete-room/100",
+							"host": [
+								"{{endpoint}}room"
+							],
+							"path": [
+								"delete-room",
+								"100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room Upload Avatar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/OneDrive/Pictures/ImageAirbnb/Image Room/Room5.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}room/upload-avatar-room/5",
+							"host": [
+								"{{endpoint}}room"
+							],
+							"path": [
+								"upload-avatar-room",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Get Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}location/get-location",
+							"host": [
+								"{{endpoint}}location"
+							],
+							"path": [
+								"get-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 13,\r\n    \"ten_vi_tri\" : \"Hai Phong\",\r\n    \"tinh_thanh\" : \"Hai Phon\",\r\n    \"quoc_gia\" : 1,\r\n    \"hinh_anh\" : \"haiphong.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}location/post-location",
+							"host": [
+								"{{endpoint}}location"
+							],
+							"path": [
+								"post-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Panigation Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}location/panigation-location?page=1&pageSize=4",
+							"host": [
+								"{{endpoint}}location"
+							],
+							"path": [
+								"panigation-location"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location With ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}location/location-withid/13",
+							"host": [
+								"{{endpoint}}location"
+							],
+							"path": [
+								"location-withid",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Location WIth ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_vi_tri\" : \"Hội An\",\r\n    \"tinh_thanh\" : \"Quảng Nam\",\r\n    \"quoc_gia\" : 1,\r\n    \"hinh_anh\" : \"hoian.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}location/put-location-withid/13",
+							"host": [
+								"{{endpoint}}location"
+							],
+							"path": [
+								"put-location-withid",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}location/delete-location/13",
+							"host": [
+								"{{endpoint}}location"
+							],
+							"path": [
+								"delete-location",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location Upload Avatar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/OneDrive/Pictures/ImageAirbnb/Image Location/HCM.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}location/upload-avatar-location/8",
+							"host": [
+								"{{endpoint}}location"
+							],
+							"path": [
+								"upload-avatar-location",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "http://localhost:3080/",
+			"type": "string"
+		}
+	]
+}
